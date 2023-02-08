@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Temp Viewer: Rev 1.0</title>
+	<link href="examples.css" rel="stylesheet" type="text/css">
+	<script language="javascript" type="text/javascript" src="source/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="lib/globalize.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.canvaswrapper.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.colorhelpers.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.saturated.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.browser.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.drawSeries.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.uiConstants.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.navigate.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.touchNavigate.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.hover.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.touch.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.time.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.selection.js"></script>
+	<script language="javascript" type="text/javascript" src="source/jquery.flot.legend.js"></script>
+	<script language="javascript" type="text/javascript" src="source/temperaturefileopen.js"></script>
+
+</head>
+
+<body>
+	<!-- The `multiple` attribute lets users select multiple files. -->
+	<button id="pick"> Choose File </button>
+	<!--input type="file" id="file-selector" multiple-->
+
+	<script>	
+	$(function() {
+		var choiceContainer = $("#choices");
+		choiceObj(choiceContainer);
+		const pickButton = document.querySelector('button#pick');
+		pickButton.addEventListener('click', accessFiles);
+	});
+
+	</script>
+
+	<div id="header">
+		<h2 align="left">Laboratory Temperature Monitoring</h2>
+	</div>
+
+	<div id="content">
+
+		<div id="choices" style="float:right; width:200px;"></div>
+
+		<div class="demo-container" style="width: 82%;height: 550px">
+			<div id="placeholder" class="demo-placeholder"></div>
+
+		</div>
+
+		<div class="demo-container" style="width: 82%;height: 180px">
+			<div id="overview" class="demo-placeholder"></div>
+		</div>
+
+		<p>The plot shows selected temperature data for a given laboratory.</p>
+		<p>The smaller plot is linked to the main plot, so it acts as an overview; selecting allows zooming</p>
+
+	</div>
+
+	<div id="footer">
+		Temperature Viewer 1.0 Chris Young 2023
+	</div>
+
+</body>
+
+</html>
